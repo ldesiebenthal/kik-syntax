@@ -1,0 +1,15 @@
+{
+  "name": "kik-syntax",
+  "theme": "syntax",
+  "version": "1.0.0",
+  "description": "The famous Kik syntax wanted by all",
+  "keywords": [
+    "syntax",
+    "theme"
+  ],
+  "repository": "https://github.com/atom/kik-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}
