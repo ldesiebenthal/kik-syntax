@@ -32,9 +32,9 @@ atom-text-editor {
     }
   }
 
+  .fold-marker:after,
   .gutter .line-number.folded,
-  .gutter .line-number:after,
-  .fold-marker:after {
+  .gutter .line-number:after {
     color: @light-gray;
   }
 
@@ -50,10 +50,7 @@ atom-text-editor {
     background-color: @syntax-selection-color;
   }
 }
-
-
 // Syntax styles
-
 .syntax--comment {
   color: @gray;
 }
@@ -122,7 +119,6 @@ atom-text-editor {
 .syntax--string {
   color: @green;
 
-
   &.syntax--regexp {
     color: @cyan;
 
@@ -142,10 +138,10 @@ atom-text-editor {
       color: @gray;
     }
 
-    &.syntax--string,
-    &.syntax--variable,
+    &.syntax--array,
     &.syntax--parameters,
-    &.syntax--array {
+    &.syntax--string,
+    &.syntax--variable {
       color: @syntax-text-color;
     }
 
@@ -168,7 +164,6 @@ atom-text-editor {
   &.syntax--section.syntax--embedded {
     color: darken(@red, 10%);
   }
-
 }
 
 .syntax--support {
@@ -176,7 +171,7 @@ atom-text-editor {
     color: @light-orange;
   }
 
-  &.syntax--function  {
+  &.syntax--function {
     color: @cyan;
 
     &.syntax--any-method {
@@ -189,6 +184,7 @@ atom-text-editor {
   &.syntax--name.syntax--function {
     color: @blue;
   }
+
   &.syntax--name.syntax--type {
     color: @light-orange;
     text-decoration: underline;
@@ -197,7 +193,9 @@ atom-text-editor {
   &.syntax--other.syntax--inherited-class {
     color: @green;
   }
-  &.syntax--name.syntax--class, &.syntax--name.syntax--type.syntax--class {
+
+  &.syntax--name.syntax--class,
+  &.syntax--name.syntax--type.syntax--class {
     color: @light-orange;
   }
 
@@ -288,119 +286,169 @@ atom-text-editor {
 
 .syntax--source.syntax--gfm .syntax--markup {
   -webkit-font-smoothing: auto;
+
   &.syntax--heading {
     color: @green;
   }
 }
-
-
 // Mini editor
-
 atom-text-editor[mini] .scroll-view {
   padding-left: 1px;
 }
-
-
 //css
-.syntax--css{
+.syntax--css {
   &.syntax--id {
-    color:#8d98a9;
+    color: #8d98a9;
   }
+
   &.syntax--class {
-    color:#957147;
+    color: #957147;
   }
+
   &.syntax--property-name {
-    color:#c2af7c;
+    color: #c2af7c;
   }
-  &.syntax--property-value{
-    color:#c07b4b;
+
+  &.syntax--property-value {
+    color: #c07b4b;
   }
-  &.syntax--property-value.syntax--constant{
-    color:#f7eea3;
+
+  &.syntax--property-value.syntax--constant {
+    color: #f7eea3;
   }
-  &.syntax--keyword.syntax--other.syntax--unit{
-      color:#c2af7c;
+
+  &.syntax--keyword.syntax--other.syntax--unit {
+    color: #c2af7c;
   }
-  &.syntax--constant.syntax--other.syntax--color{
-    color:#c07b4b;
+
+  &.syntax--constant.syntax--other.syntax--color {
+    color: #c07b4b;
   }
-  &.syntax--name.syntax--tag{
-    color:#f7eea3;
+
+  &.syntax--name.syntax--tag {
+    color: #f7eea3;
     text-decoration: none;
   }
-  &.syntax--support.syntax--function{
-      color:#f7eea3;
+
+  &.syntax--support.syntax--function {
+    color: #f7eea3;
   }
-  &.syntax--punctuation.syntax--definition.syntax--string{
-      color: @green;
+
+  &.syntax--punctuation.syntax--definition.syntax--string {
+    color: @green;
   }
-  &.syntax--entity.syntax--other.syntax--attribute-name.syntax--pseudo-class{
-    color:#fff;
+
+  &.syntax--entity.syntax--other.syntax--attribute-name.syntax--pseudo-class {
+    color: #fff;
   }
 }
 //php
- .syntax--php{
-   &.syntax--punctuation.syntax--section.syntax--embedded{
-     color:#b498c6;
-   }
-   &.syntax--control.syntax--import.syntax--include{
-     color:#c9ab76;
-   }
-   &.syntax--punctuation.syntax--definition.syntax--string{
-     color:@green;
-   }
-   &.syntax--construct{
-     color:#b498c6;
-   }
-   &.syntax--function.syntax--network,&.syntax--support.syntax--function.syntax--var,&.syntax--support.syntax--function{
-     color:#f08956;
-   }
-   &.syntax--modifier, &.syntax--type.syntax--function {
-     color:#f7eea3;
-   }
-   &.syntax--entity.syntax--name.syntax--function{
-     color:#f08956;
-   }
-   &.syntax--bracket.syntax--curly{
-     color:#fff;
-   }
-   &.syntax--variable, &.syntax--punctuation.syntax--definition{
-       color:#7887a3;
-   }
-   &.syntax--keyword.syntax--operator.syntax--logical, &.syntax--operator{
-     color:#c8a972;
-   }
-   &.syntax--punctuation.syntax--definition.syntax--comment{
-     color:@gray;
-   }
-   &.syntax--punctuation.syntax--definition.syntax--bracket.syntax--round{
-      color:#fff;
-   }
-   &.syntax--constant.syntax--numeric{
-     color:#c36f53;
-   }
-   &.syntax--support.syntax--function.syntax--construct.syntax--output{
-     color:#b295c5;
-   }
-   &.syntax--punctuation.syntax--section.syntax--array{
-     color: #c8a972;
-   }
-   &.syntax--entity.syntax--name.syntax--type.syntax--class{
-     text-decoration: none;
-   }
- }
 
- //html
- .syntax--html{
-   &.syntax--entity.syntax--name.syntax--tag,&.syntax--entity.syntax--other.syntax--attribute-name{
-     color:#957147;
-     text-decoration: none;
-   }
-   &.syntax--punctuation.syntax--definition.syntax--tag,&.syntax--punctuation.syntax--separator.syntax--key-value,&.syntax--meta.syntax--tag.syntax--sgml.syntax--doctype{
-     color:#a78961;
-   }
-   &.syntax--string.syntax--quoted,&.syntax--punctuation.syntax--definition.syntax--string{
-     color:@green;
-   }
+.syntax--php {
+  &.syntax--punctuation.syntax--section.syntax--embedded {
+    color: #b498c6;
+  }
 
- }
+  &.syntax--control.syntax--import.syntax--include {
+    color: #c9ab76;
+  }
+
+  &.syntax--punctuation.syntax--definition.syntax--string {
+    color: @green;
+  }
+
+  &.syntax--construct,
+  &.syntax--support.syntax--function.syntax--construct {
+    color: #b498c6;
+  }
+
+  &.syntax--function.syntax--network,
+  &.syntax--support.syntax--function,
+  &.syntax--support.syntax--function.syntax--var {
+    color: #f08956;
+  }
+
+  &.syntax--modifier,
+  &.syntax--type.syntax--function {
+    color: #f7eea3;
+  }
+
+  &.syntax--entity.syntax--name.syntax--function {
+    color: #f08956;
+  }
+
+  &.syntax--meta.syntax--function .syntax--entity.syntax--name.syntax--function {
+    color: #957147;
+  }
+
+  &.syntax--bracket.syntax--curly {
+    color: #fff;
+  }
+
+  &.syntax--punctuation.syntax--definition,
+  &.syntax--variable {
+    color: #7887a3;
+  }
+
+  &.syntax--keyword.syntax--operator.syntax--logical,
+  &.syntax--operator {
+    color: #c8a972;
+  }
+
+  &.syntax--punctuation.syntax--definition.syntax--comment {
+    color: @gray;
+  }
+
+  &.syntax--punctuation.syntax--definition.syntax--bracket.syntax--round {
+    color: #fff;
+  }
+
+  &.syntax--constant.syntax--numeric {
+    color: @red;
+  }
+
+  &.syntax--support.syntax--function.syntax--construct.syntax--output {
+    color: #b295c5;
+  }
+
+  &.syntax--punctuation.syntax--section.syntax--array {
+    color: #c8a972;
+  }
+
+  &.syntax--entity.syntax--name.syntax--type.syntax--class {
+    text-decoration: none;
+  }
+
+  &.syntax--punctuation.syntax--terminator.syntax--expression {
+    color: #fff;
+  }
+
+  &.syntax--entity.syntax--other.syntax--inherited-class {
+    color: @red;
+  }
+  &.syntax--support.syntax--class{
+    color: @red;
+  }
+  &.syntax--punctuation.syntax--definition.syntax--bracket.syntax--curly{
+    color:#fff;
+  }
+}
+//html
+.syntax--html {
+  &.syntax--entity.syntax--name.syntax--tag,
+  &.syntax--entity.syntax--other.syntax--attribute-name {
+    color: #957147;
+    text-decoration: none;
+  }
+
+  &.syntax--meta.syntax--tag.syntax--sgml.syntax--doctype,
+  &.syntax--punctuation.syntax--definition.syntax--tag,
+  &.syntax--punctuation.syntax--separator.syntax--key-value {
+    color: #a78961;
+  }
+
+  &.syntax--punctuation.syntax--definition.syntax--string,
+  &.syntax--string.syntax--quoted {
+    color: @green;
+  }
+}
